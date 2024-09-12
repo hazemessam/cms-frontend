@@ -1,0 +1,61 @@
+<div class="data-table">
+    <table mat-table [dataSource]="employeesDataSource"  class="mat-elevation-z8">
+    
+        <ng-container matColumnDef="id">
+          <th mat-header-cell *matHeaderCellDef> ID </th>
+          <td mat-cell *matCellDef="let emp"> {{ emp.id }} </td>
+        </ng-container>
+      
+        <ng-container matColumnDef="name">
+          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <td mat-cell *matCellDef="let emp"> {{ emp.name }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef> Email </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.email }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="phoneNumber">
+            <th mat-header-cell *matHeaderCellDef> Phone Number </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.phoneNumber }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="nationalId">
+            <th mat-header-cell *matHeaderCellDef> National ID </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.nationalId }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="role">
+            <th mat-header-cell *matHeaderCellDef> Role </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.role }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="hiringDate">
+            <th mat-header-cell *matHeaderCellDef> Hiring Date </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.hiringDate }} </td>
+        </ng-container>
+    
+        <ng-container matColumnDef="departmentName">
+            <th mat-header-cell *matHeaderCellDef> DepartmentName </th>
+            <td mat-cell *matCellDef="let emp"> {{ emp.departmentName }} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let emp">
+                <div class="actions">
+                    <button mat-button class="action update" (click)="onUpdateEmp(emp)">Update</button>
+                    <button mat-button class="action delete" (click)="onDeleteEmp(emp.id)">Delete</button>
+                </div>
+            </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="columns"></tr>
+        <tr mat-row *matRowDef="let row; columns: columns;"></tr>
+    </table>
+      
+    <mat-paginator [pageSizeOptions]="[5, 10, 20]" showFirstLastButtons />
+</div>
+
+<app-update-employee (updated)="loadEmployees()" />

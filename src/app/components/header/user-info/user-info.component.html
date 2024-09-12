@@ -1,0 +1,7 @@
+@if (user) {
+    <div class="container">
+        <span>{{ user.name }}</span>
+        <span> | </span>
+        <button (click)="onLogout()"> Logout </button>
+    </div>
+}

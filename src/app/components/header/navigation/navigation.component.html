@@ -1,0 +1,8 @@
+@if (user) {
+    <nav>
+        <a routerLink="" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">Home</a>
+        @if ([Role.ADMIN, Role.HR].includes(user.role)) {
+            <a routerLink="employees" routerLinkActive="active">Employees</a>
+        }
+    </nav>
+}

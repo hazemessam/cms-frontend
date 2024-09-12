@@ -1,0 +1,8 @@
+@if (notification) {
+    <div class="notification"
+        [class.info]="notification.type == 'info'"
+        [class.error]="notification.type == 'error'"
+    >
+        {{ notification.msg }}
+    </div>
+}

@@ -1,0 +1,17 @@
+nav {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    a {
+        color: white;
+        text-decoration: none;
+
+        &.active {
+            background-color: white;
+            color: orange;
+            padding: 5px;
+            border-radius: 4px;
+        }
+    }
+}

@@ -1,0 +1,29 @@
+.data-table {
+    border: 1px solid orange;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+
+    .actions {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+
+        .action {
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+    
+            &.delete {
+                background-color: red;
+            }
+    
+            &.update {
+                background-color: orange;
+            }
+        }
+    }
+}
